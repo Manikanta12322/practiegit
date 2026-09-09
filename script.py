@@ -5,3 +5,7 @@ def myfunc(a,b):
 print(myfunc(10,20))
 print("manikanta")
 print("bharat")
+class myclass:
+ a=10
+p1=myclass()
+print(p1.a)
