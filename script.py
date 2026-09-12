@@ -8,4 +8,4 @@ print("bharat")
 print("vijay")
 #ptint()
 #manikantaO
-
+print("Ajay")
