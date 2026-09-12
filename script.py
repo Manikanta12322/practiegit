@@ -7,4 +7,6 @@ print("manikanta")
 print("bharat")
 print("vijay")
 #ptint()
-#manikata
+#manikantaO
+print("Ajay")
+
