@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vadapalli Manikanta — System Engineer, Optical Networks &amp; Automation</title>
+<meta name="description" content="System Engineer with 2+ years in DWDM/OTN operations, migrations and node lifecycle management, building toward network automation and DevOps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F7F9;
+    --panel:#FFFFFF;
+    --ink:#101C2E;
+    --ink-soft:#4B5A70;
+    --rule:#DBE1E9;
+    --accent:#0E6A92;
+    --accent-deep:#0A4E6C;
+    --lit:#D98A1F;
+    --shadow:rgba(16,28,46,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#0C1420;
+      --panel:#121D2C;
+      --ink:#E8EDF4;
+      --ink-soft:#9AAABF;
+      --rule:#243447;
+      --accent:#5FC0E4;
+      --accent-deep:#8FD6F2;
+      --lit:#F0B959;
+      --shadow:rgba(0,0,0,.4);
+    }
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-size:17px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 28px}
+
+  h1,h2,h3{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;line-height:1.1;margin:0}
+  h1{font-weight:800;letter-spacing:-.03em}
+  h2{font-size:clamp(1.55rem,3.4vw,2.15rem);font-weight:700;letter-spacing:-.02em}
+  h3{font-size:1.1rem;font-weight:600;letter-spacing:-.01em}
+  p{margin:0 0 1rem}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+  a:hover{border-bottom-color:currentColor}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:58px}
+  .mark{font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-.02em;font-size:.95rem}
+  .mark span{color:var(--accent)}
+  .navlinks{display:flex;gap:22px;font-size:.88rem;font-weight:500}
+  .navlinks a{color:var(--ink-soft);border:0}
+  .navlinks a:hover{color:var(--ink)}
+  @media (max-width:640px){.navlinks{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:72px 0 46px}
+  .hero .role{
+    font-size:.95rem;font-weight:500;color:var(--accent);
+    margin-bottom:14px;
+  }
+  .hero h1{font-size:clamp(2.6rem,8vw,4.6rem);margin-bottom:18px}
+  .hero .lede{font-size:clamp(1.05rem,2.2vw,1.22rem);color:var(--ink-soft);max-width:60ch;margin-bottom:30px}
+  .contactrow{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{
+    display:inline-block;padding:9px 17px;font-size:.9rem;font-weight:500;
+    border:1px solid var(--rule);border-radius:999px;color:var(--ink);background:var(--panel);
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+
+  /* ---------- spectrum ---------- */
+  .spectrum{margin-top:52px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:22px 0 14px}
+  .channels{display:flex;align-items:flex-end;gap:3px;height:86px}
+  .ch{flex:1 1 0;border-radius:1.5px 1.5px 0 0;height:22%;opacity:.42;transform-origin:bottom}
+  .ch.lit{opacity:1}
+  .scale{
+    display:flex;justify-content:space-between;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.72rem;
+    color:var(--ink-soft);margin-top:9px;letter-spacing:.02em;
+  }
+  .scale em{font-style:normal}
+  @media (prefers-reduced-motion: no-preference){
+    .ch{animation:rise .7s cubic-bezier(.2,.75,.3,1) both}
+  }
+  @keyframes rise{from{transform:scaleY(.06);opacity:0}}
+
+  /* ---------- sections ---------- */
+  section{padding:58px 0;border-top:1px solid var(--rule)}
+  section:first-of-type{border-top:0}
+  .sechead{margin-bottom:30px}
+  .sechead p{color:var(--ink-soft);margin:10px 0 0;max-width:62ch;font-size:.97rem}
+
+  .prose{max-width:70ch}
+  .prose p{color:var(--ink-soft)}
+  .prose strong{color:var(--ink);font-weight:600}
+
+  /* ---------- experience ---------- */
+  .job{display:grid;grid-template-columns:172px 1fr;gap:30px}
+  .job .when{
+    font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--ink-soft);
+    padding-top:5px;line-height:1.5;
+  }
+  .job .when b{display:block;color:var(--ink);font-weight:500}
+  .job h3{margin-bottom:3px}
+  .job .org{color:var(--accent);font-weight:500;font-size:.95rem;margin-bottom:14px}
+  ul.tasks{margin:0;padding-left:1.05rem;color:var(--ink-soft)}
+  ul.tasks li{margin-bottom:9px;padding-left:3px}
+  ul.tasks li::marker{color:var(--accent)}
+  @media (max-width:720px){
+    .job{grid-template-columns:1fr;gap:12px}
+    .job .when{padding-top:0}
+    .job .when b{display:inline}
+  }
+
+  /* ---------- projects ---------- */
+  .projects{display:grid;gap:0}
+  .proj{
+    display:grid;grid-template-columns:40px 1fr;gap:26px;
+    padding:30px 0;border-top:1px solid var(--rule);
+  }
+  .proj:first-child{border-top:0;padding-top:4px}
+  .swatch{width:10px;border-radius:5px;margin-top:8px;height:calc(100% - 16px);min-height:54px}
+  .proj h3{margin-bottom:6px}
+  .proj .kicker{color:var(--ink-soft);font-size:.9rem;margin-bottom:12px}
+  .stack{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:.74rem;
+    padding:3px 9px;border:1px solid var(--rule);border-radius:4px;color:var(--ink-soft);
+  }
+  @media (max-width:560px){.proj{grid-template-columns:1fr;gap:14px}.swatch{height:6px;width:64px;min-height:0}}
+
+  /* ---------- skills ---------- */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:26px 34px}
+  .skillgroup h3{font-size:.93rem;margin-bottom:11px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
+  .skillgroup ul{list-style:none;margin:0;padding:0;color:var(--ink-soft);font-size:.94rem}
+  .skillgroup li{padding:3px 0}
+  .dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:9px;vertical-align:middle}
+
+  /* ---------- two column ---------- */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:46px}
+  @media (max-width:720px){.duo{grid-template-columns:1fr;gap:38px}}
+  .listplain{list-style:none;margin:0;padding:0}
+  .listplain li{padding:11px 0;border-top:1px solid var(--rule);color:var(--ink-soft);font-size:.94rem}
+  .listplain li:first-child{border-top:0}
+  .listplain b{display:block;color:var(--ink);font-weight:600;font-size:.97rem;margin-bottom:2px}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--rule);padding:52px 0 64px}
+  footer h2{margin-bottom:14px}
+  footer p{color:var(--ink-soft);max-width:56ch}
+  .fine{margin-top:36px;font-size:.82rem;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="mark">VADAPALLI MANIKANTA<span>.</span></div>
+    <nav class="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="role">System Engineer · Optical networks · Moving into automation</div>
+    <h1>Vadapalli<br>Manikanta</h1>
+    <p class="lede">I keep DWDM and OTN networks running — commissioning nodes, planning migrations, and validating optical services on live infrastructure. Now I'm building the automation layer on top of it with Python, Git and Jenkins.</p>
+    <div class="contactrow">
+      <a class="btn primary" href="mailto:vadapallimanikanta24@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/vadapalli-manikanta-92a57025a" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Manikanta12322/net-devops" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="tel:+918340824689">+91 83408 24689</a>
+    </div>
+
+    <div class="spectrum" aria-hidden="true">
+      <div class="channels" id="channels"></div>
+      <div class="scale">
+        <em>1528.77 nm</em><em>C-band channel plan · 50 GHz spacing</em><em>1568.77 nm</em>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <div class="sechead"><h2>About</h2></div>
+    <div class="prose">
+      <p>I'm a System Engineer with <strong>2+ years of hands-on experience</strong> in optical networking operations — DWDM and OTN audits, migrations, and node lifecycle management across live customer networks. Most of my work happens inside maintenance windows, where the documentation has to be right before anyone touches a shelf.</p>
+      <p>That discipline is what pulled me toward automation. I taught myself Python, Git and Jenkins by building a CI/CD project that simulates DWDM service provisioning end to end, and I'm now looking for a <strong>Network Automation or Junior DevOps role</strong> where the network domain knowledge and the scripting can work together.</p>
+      <p>B.Tech in Electronics and Communication Engineering, Raghu Institute of Technology (JNTUK), 2024. Based in Visakhapatnam.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sechead">
+      <h2>Experience</h2>
+      <p>Optical transport operations for carrier networks, from planning through post-migration verification.</p>
+    </div>
+
+    <div class="job">
+      <div class="when"><b>Jun 2024 — Present</b>Visakhapatnam, IN</div>
+      <div>
+        <h3>System Engineer I</h3>
+        <div class="org">Vayu Nova Solutions LLP</div>
+        <ul class="tasks">
+          <li>Run CTC audits to collect and validate network detail — topology, alarms, software versions, span loss, inventory and IP configuration.</li>
+          <li>Design network solutions against customer requirements using Cisco Transport Planner (CTP).</li>
+          <li>Write the pre-migration and post-migration documentation for maintenance-window activities, so execution is traceable and repeatable.</li>
+          <li>Execute migration and upgrade tasks inside maintenance windows while holding network stability and keeping service impact minimal.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sechead">
+      <h2>Projects</h2>
+      <p>Three strands of work: node lifecycle on a live carrier network, a remote CLI deployment, and self-built provisioning automation.</p>
+    </div>
+
+    <div class="projects">
+
+      <article class="proj">
+        <div class="swatch" style="background:#14867A"></div>
+        <div>
+          <h3>Node lifecycle management</h3>
+          <div class="kicker">Uniti Networks — insertion, decommissioning and upgrades on production infrastructure</div>
+          <ul class="tasks">
+            <li><strong>Insertion &amp; commissioning:</strong> integrated new optical nodes into live infrastructure, verified hardware (shelves, cards, cabling), validated fiber connectivity and optical signal flow, and confirmed readiness for live traffic.</li>
+            <li><strong>Removal &amp; decommissioning:</strong> ran service-impact analysis and pulled nodes out of production with zero unplanned disruption.</li>
+            <li><strong>Upgrades:</strong> replaced and validated hardware to raise node capacity, confirming compatibility and continuity of existing traffic.</li>
+          </ul>
+          <div class="stack"><span class="tag">DWDM</span><span class="tag">OTN</span><span class="tag">CTC</span><span class="tag">CTP</span><span class="tag">Service-impact analysis</span></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="swatch" style="background:#0E6A92"></div>
+        <div>
+          <h3>Smart Optics device deployment</h3>
+          <div class="kicker">Remote CLI commissioning of Smartoptics DCP-M32-CSO-ZR+ DWDM nodes</div>
+          <ul class="tasks">
+            <li>Provided remote support for CLI-based configuration and commissioning, including hostname and management IPv4 setup.</li>
+            <li>Verified software versions, hardware inventory, alarms, network and fiber/line interfaces, OSC status and overall system health via CLI.</li>
+            <li>Supported client and line-port configuration, then verified wavelength and channel status during service turn-up.</li>
+            <li>Ran loopback testing and optical service validation, and maintained post-activity CLI verification records for every deployed node.</li>
+          </ul>
+          <div class="stack"><span class="tag">Smartoptics CLI</span><span class="tag">DWDM</span><span class="tag">OSC</span><span class="tag">Loopback testing</span><span class="tag">Turn-up</span></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="swatch" style="background:#D98A1F"></div>
+        <div>
+          <h3>DWDM service provisioning automation</h3>
+          <div class="kicker">Self-directed CI/CD project — simulating provisioning end to end · <a href="https://github.com/Manikanta12322/net-devops" target="_blank" rel="noopener">github.com/Manikanta12322/net-devops</a></div>
+          <ul class="tasks">
+            <li>Wrote Python scripts implementing service-provisioning logic, input validation, resource allocation and duplicate-prevention checks against JSON configuration files.</li>
+            <li>Set up a GitHub–Jenkins pipeline to automate workflow execution and track every change through version control — my first hands-on CI/CD build.</li>
+            <li>Deployed and ran the pipeline on AWS EC2 under Linux.</li>
+          </ul>
+          <div class="stack"><span class="tag">Python</span><span class="tag">Jenkins</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">AWS EC2</span><span class="tag">YAML</span><span class="tag">JSON</span><span class="tag">Linux</span></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sechead">
+      <h2>Skills</h2>
+      <p>Networking depth from daily operations; automation built through project work and training.</p>
+    </div>
+    <div class="skills">
+      <div class="skillgroup">
+        <h3>Networking</h3>
+        <ul>
+          <li><span class="dot" style="background:#14867A"></span>DWDM</li>
+          <li><span class="dot" style="background:#14867A"></span>OTN</li>
+          <li><span class="dot" style="background:#14867A"></span>Ethernet</li>
+          <li><span class="dot" style="background:#14867A"></span>TCP/IP</li>
+          <li><span class="dot" style="background:#14867A"></span>OSI model</li>
+        </ul>
+      </div>
+      <div class="skillgroup">
+        <h3>Automation &amp; CI/CD</h3>
+        <ul>
+          <li><span class="dot" style="background:#D98A1F"></span>Python</li>
+          <li><span class="dot" style="background:#D98A1F"></span>Git &amp; GitHub</li>
+          <li><span class="dot" style="background:#D98A1F"></span>Jenkins</li>
+          <li><span class="dot" style="background:#D98A1F"></span>Ansible</li>
+          <li><span class="dot" style="background:#D98A1F"></span>Docker</li>
+          <li><span class="dot" style="background:#D98A1F"></span>AWS EC2</li>
+        </ul>
+      </div>
+      <div class="skillgroup">
+        <h3>Protocols &amp; APIs</h3>
+        <ul>
+          <li><span class="dot" style="background:#0E6A92"></span>NETCONF</li>
+          <li><span class="dot" style="background:#0E6A92"></span>RESTCONF</li>
+          <li><span class="dot" style="background:#0E6A92"></span>gRPC</li>
+        </ul>
+      </div>
+      <div class="skillgroup">
+        <h3>Tools &amp; platforms</h3>
+        <ul>
+          <li><span class="dot" style="background:#8E4EA8"></span>Cisco Transport Planner (CTP)</li>
+          <li><span class="dot" style="background:#8E4EA8"></span>Cisco Transport Controller (CTC)</li>
+          <li><span class="dot" style="background:#8E4EA8"></span>CONP</li>
+          <li><span class="dot" style="background:#8E4EA8"></span>Visio</li>
+          <li><span class="dot" style="background:#8E4EA8"></span>Linux</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="background">
+    <div class="sechead"><h2>Certifications &amp; education</h2></div>
+    <div class="duo">
+      <div>
+        <ul class="listplain">
+          <li><b>DevOps with AWS</b>Naresh IT — training &amp; certification, January 2025</li>
+          <li><b>DevOps Introduction &amp; DevOps Pipelines: Jenkins</b>Nokia</li>
+          <li><b>Management Interfaces</b>Nokia</li>
+          <li><b>NSP Technology Fundamentals Overview</b>Nokia</li>
+          <li><b>Nokia Optical Network Professional</b>Nokia — certified</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="listplain">
+          <li><b>B.Tech, Electronics &amp; Communication Engineering</b>Raghu Institute of Technology, JNTUK — 2024 · CGPA 7.6</li>
+          <li><b>Intermediate (MPC)</b>Narayana Junior College · CGPA 9.5</li>
+          <li><b>Secondary education</b>Board of Secondary Education · CGPA 10</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>I'm looking for network automation and junior DevOps roles. If you're building automation around optical or IP transport, I'd like to hear about it.</p>
+    <div class="contactrow" style="margin-top:22px">
+      <a class="btn primary" href="mailto:vadapallimanikanta24@gmail.com">vadapallimanikanta24@gmail.com</a>
+      <a class="btn" href="tel:+918340824689">+91 83408 24689</a>
+      <a class="btn" href="https://www.linkedin.com/in/vadapalli-manikanta-92a57025a" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Manikanta12322/net-devops" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="fine">Vadapalli Manikanta · Visakhapatnam, India</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var host = document.getElementById('channels');
+  if(!host) return;
+  var total = 44;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lit = [6, 7, 13, 21, 22, 23, 30, 37];
+  for(var i=0;i<total;i++){
+    var bar = document.createElement('div');
+    var hue = 188 - (i/(total-1))*188 + 360;  // teal -> violet across the band
+    hue = 190 + (i/(total-1))*150;
+    var on = lit.indexOf(i) !== -1;
+    bar.className = 'ch' + (on ? ' lit' : '');
+    bar.style.background = 'hsl(' + hue.toFixed(0) + ' 62% 48%)';
+    bar.style.height = (on ? (52 + (i % 5) * 9) : (16 + (i % 4) * 5)) + '%';
+    if(!reduce) bar.style.animationDelay = (i * 16) + 'ms';
+    host.appendChild(bar);
+  }
+})();
+</script>
+
+</body>
+</html>
